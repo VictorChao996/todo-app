@@ -7,6 +7,7 @@
     - [prerequistie](#prerequistie)
     - [install](#install)
     - [local dev](#local-dev)
+    - [build](#build)
   - [Records](#records)
     - [2024/9/14](#2024914)
   - [Target](#target)
@@ -53,12 +54,19 @@ npm install
 npm run dev
 ```
 
+### build
+```
+npm run build
+npm run copy_build //custom command for gh-pages directory
+```
+
 > for more executions see the package.json file
 ---
 ## Records
 ### 2024/9/14
 - project start !
 - complete basic todo app functionality
+- add github pages for demo (functions without server)
 
 
 ## Target
