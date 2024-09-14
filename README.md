@@ -55,9 +55,10 @@ npm run dev
 ```
 
 ### build
+- frontend
 ```
 npm run build
-npm run copy_build //custom command for gh-pages directory
+npm run gh-pages
 ```
 
 > for more executions see the package.json file
