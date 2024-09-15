@@ -85,13 +85,11 @@ npm run gh-pages
 - complete basic todo app functionality
 - add github pages for demo (functions without server)
 
-
 ## Target
 Targets & Improvements for this todo app (without order).
 - [x] basic todo app functionality (basic frontend/backend func)
 - [ ] better looking style on todo-app
 - [X] add localStorage on webpage
-- [ ] store todo data in database (personal users)
 - [ ] account system (Basic login/logout, create account)
 - [ ] store todo data in database (for multiple users)
 - [ ] account management System (manage multiple account)
