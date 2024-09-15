@@ -11,6 +11,17 @@
 	 * Fetch data from server
 	 */
 	function init() {
+		//get data from localStorage first
+		try {
+			const localStorageTodos = localStorage.getItem("todos");
+			if (localStorageTodos) {
+				todos.value = JSON.parse(localStorage.getItem("todos"));
+			}
+		} catch (e) {
+			console.log(e);
+		}
+
+		//fetch data from backend
 		axios.get("http://localhost:3000/api/todos").then((response) => {
 			console.log(response.data);
 			todos.value = response.data;
