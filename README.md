@@ -91,8 +91,9 @@ Targets & Improvements for this todo app (without order).
 - [x] basic todo app functionality (basic frontend/backend func)
 - [ ] better looking style on todo-app
 - [X] add localStorage on webpage
-- [ ] store todo data in database
+- [ ] store todo data in database (personal users)
 - [ ] account system (Basic login/logout, create account)
+- [ ] store todo data in database (for multiple users)
 - [ ] account management System (manage multiple account)
 - [ ] Developers can setup frontend & backend service with docker
 - [ ] add testing for this project (api test / e2e test)

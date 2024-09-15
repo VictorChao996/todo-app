@@ -1,13 +1,12 @@
 {
-  "name": "platform",
+  "name": "todo-app-frontend",
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "gh-pages": "node ../gh-pages.js"
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "VictorChao996",
