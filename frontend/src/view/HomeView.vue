@@ -2,6 +2,7 @@
 	import { ref } from "vue";
 	import axios from "axios";
 	import Todo from "../component/Todo.vue";
+	import { backendApiEndpoint } from "../main";
 
 	const todos = ref([]);
 	const new_todo_text = ref("");
@@ -23,7 +24,7 @@
 		}
 
 		//fetch data from backend
-		axios.get("http://localhost:3000/api/todos").then((response) => {
+		axios.get(`${backendApiEndpoint}/todos`).then((response) => {
 			console.log(response.data);
 			todos.value = response.data;
 		});

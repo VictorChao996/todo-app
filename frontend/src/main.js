@@ -17,3 +17,5 @@ const router = createRouter({
 
 app.use(router);
 app.mount("#app");
+
+export const backendApiEndpoint = "http://localhost:3000/api";

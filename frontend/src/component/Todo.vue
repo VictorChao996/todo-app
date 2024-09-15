@@ -1,6 +1,7 @@
 <script setup>
 	import { defineProps, onUpdated } from "vue";
 	import axios from "axios";
+	import { backendApiEndpoint } from "../main";
 
 	const props = defineProps(["todos"]);
 	// console.log(`props todo`, props.todos);
@@ -14,7 +15,7 @@
 
 	function saveDataToServer() {
 		axios
-			.post("http://localhost:3000/api/save-todos", {
+			.post(`${backendApiEndpoint}/update-todos`, {
 				todos: props.todos,
 			})
 			.then((response) => {
