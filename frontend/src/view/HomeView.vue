@@ -2,7 +2,7 @@
 	import { ref } from "vue";
 	import axios from "axios";
 	import Todo from "../component/Todo.vue";
-	import { backendApiEndpoint } from "../main";
+	import { backendApiEndpoint } from "../setting";
 
 	const todos = ref([]);
 	const new_todo_text = ref("");

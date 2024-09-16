@@ -1,6 +1,8 @@
+//npm packages
 import { createApp } from "vue";
 import { createMemoryHistory, createRouter } from "vue-router";
 
+//vue components
 import App from "./App.vue";
 import AboutView from "./view/AboutView.vue";
 import HomeView from "./view/HomeView.vue";
@@ -17,5 +19,3 @@ const router = createRouter({
 
 app.use(router);
 app.mount("#app");
-
-export const backendApiEndpoint = "http://localhost:3000/api";

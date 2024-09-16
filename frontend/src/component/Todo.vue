@@ -1,7 +1,7 @@
 <script setup>
-	import { defineProps, onUpdated } from "vue";
+	import { onUpdated } from "vue";
 	import axios from "axios";
-	import { backendApiEndpoint } from "../main";
+	import { backendApiEndpoint } from "../setting";
 
 	const props = defineProps(["todos"]);
 	// console.log(`props todo`, props.todos);
