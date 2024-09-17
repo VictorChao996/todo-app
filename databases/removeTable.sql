@@ -1,3 +1,5 @@
 USE todo_db;
 
 DROP TABLE IF EXISTS Todos;
+
+DROP TABLE IF EXISTS Users;
