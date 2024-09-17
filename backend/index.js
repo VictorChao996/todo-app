@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import * as todoController from "./controllers/todoController.js";
+import * as userController from "./controllers/userController.js";
 
 const app = express();
 const port = 3000;
@@ -79,6 +80,57 @@ app.post("/api/save-todos", async (req, res, next) => {
 		}
 	} catch (e) {
 		// console.log(e);
+		next(e);
+	}
+});
+
+app.post("/api/user/login", async (req, res, next) => {
+	try {
+		const { account, password } = req.body;
+		if (!account || !password) {
+			res.status(401).send("Account or password is empty");
+		}
+		const token = await userController.userLogin(account, password);
+
+		if (token) {
+			res.send(token);
+		} else {
+			res.status(401).send(
+				"User Login failed: account or password do not exist or icorrect"
+			);
+		}
+	} catch (e) {
+		next(e);
+	}
+});
+
+app.post("/api/user/register", async (req, res, next) => {
+	try {
+		const { account, password, username, description } = req.body;
+		if (!account || !password || !username) {
+			res.status(401).send("Account, password or username is empty");
+		}
+
+		const checkUserExist = await userController.checkUserExist(account);
+		if (checkUserExist) {
+			res.status(401).send(
+				"User account exists! Please try another account."
+			);
+			return;
+		}
+
+		const result = await userController.createUser(
+			account,
+			password,
+			username,
+			description
+		);
+
+		if (!result) {
+			throw new Error("Error creating user");
+		}
+		res.send(result);
+	} catch (e) {
 		next(e);
 	}
 });
