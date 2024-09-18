@@ -1,4 +1,5 @@
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 const saltRounds = 10;
 
@@ -27,4 +28,37 @@ function comparePassword(password, hash) {
 	return result;
 }
 
-export { hashPassword, comparePassword };
+/**
+ * generate JWT token
+ * @param {Object} payload
+ * @returns {string} jwt token or null
+ */
+function generateJwtToken(payload) {
+	let token = null;
+	try {
+		token = jwt.sign(payload, process.env.JWT_SECRET_KEY, {
+			expiresIn: "1h",
+		});
+	} catch (err) {
+		console.log(err);
+	}
+
+	return token;
+}
+
+/**
+ * Verify (decoded) JWT token
+ * @param {*} token
+ * @returns decoded token or null
+ */
+function verifyJwtToken(token) {
+	let decoded = null;
+	try {
+		decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
+	} catch (err) {
+		console.log(err);
+	}
+	return decoded;
+}
+
+export { hashPassword, comparePassword, generateJwtToken, verifyJwtToken };

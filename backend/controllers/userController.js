@@ -18,10 +18,10 @@ async function userLogin(account, password) {
 				id: user.id,
 				account: user.account,
 				username: user.username,
-				token: "token", //NOTE: token will be generated using jsonwebtoken
 			};
-
-			return userInfo;
+			//generate jwt token with user info
+			const token = tokenUtils.generateJwtToken(userInfo);
+			return token;
 		}
 	}
 

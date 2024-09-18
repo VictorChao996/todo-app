@@ -1,3 +1,4 @@
+import "dotenv/config.js";
 import express from "express";
 import cors from "cors";
 import * as todoController from "./controllers/todoController.js";
