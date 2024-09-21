@@ -10,6 +10,8 @@
     - [build](#build)
   - [Records](#records)
     - [2024/9/14](#2024914)
+    - [2024/9/15](#2024915)
+    - [2024/9/17](#2024917)
   - [Target](#target)
   - [About](#about)
     - [Author](#author)
@@ -84,6 +86,15 @@ npm run gh-pages
 - project start !
 - complete basic todo app functionality
 - add github pages for demo (functions without server)
+### 2024/9/15
+- add localStorage functionality
+
+### 2024/9/17
+- add user DB logic
+
+### 2024/9/18
+- complete user login/register api
+
 
 ## Target
 Targets & Improvements for this todo app (without order).

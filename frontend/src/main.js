@@ -1,6 +1,8 @@
 //npm packages
 import { createApp } from "vue";
 import { createMemoryHistory, createRouter } from "vue-router";
+import PrimeVue from "primevue/config";
+import "primevue/resources/themes/aura-light-lime/theme.css";
 
 //vue components
 import App from "./App.vue";
@@ -18,4 +20,5 @@ const router = createRouter({
 });
 
 app.use(router);
+app.use(PrimeVue);
 app.mount("#app");
