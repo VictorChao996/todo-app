@@ -10,6 +10,8 @@
     - [build](#build)
   - [Records](#records)
     - [2024/9/14](#2024914)
+    - [2024/9/15](#2024915)
+    - [2024/9/17](#2024917)
   - [Target](#target)
   - [About](#about)
     - [Author](#author)
@@ -34,6 +36,7 @@ I'm trying something new here first.
 ### prerequistie
 - git
 - node
+- docker (optional)
 
 ### install
 ```
@@ -53,6 +56,21 @@ cd backend
 npm install
 npm run dev
 ```
+- Database
+  - Native MySQL DB
+    1. run `mysql -u <<username>> -p <<password>> <<database_name>> < setUp.sql` to setup database for backend
+    2. Change the "user" , "password", "database" in the connectionConfig in `database-test-connections.js`
+    3. Run command: `npm run db` to test the connections
+ - Docker
+    1. Run `docker run --name todo-app-db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql:8` on local PC terminal
+    2. Run `docker cp ./databases todo-app-db:databases` on local PC terminal
+    3. Run `docker exec -it todo-app-db bash` on local PC terminal to connect to the docker container
+    4. Run `cd databases` in docker container bash
+    5. Run `mysql -u <<username>> -p mysql < setUp.sql` to setup the database & tables
+    6. Enter the password
+    7. Optional step （contain additional install）
+       1. Run `npm install`
+       2. Run `npm run db` to test the connection
 
 ### build
 - frontend
@@ -68,15 +86,23 @@ npm run gh-pages
 - project start !
 - complete basic todo app functionality
 - add github pages for demo (functions without server)
+### 2024/9/15
+- add localStorage functionality
+
+### 2024/9/17
+- add user DB logic
+
+### 2024/9/18
+- complete user login/register api
 
 
 ## Target
 Targets & Improvements for this todo app (without order).
 - [x] basic todo app functionality (basic frontend/backend func)
 - [ ] better looking style on todo-app
-- [ ] add localStorage on webpage
-- [ ] store todo data in database
+- [X] add localStorage on webpage
 - [ ] account system (Basic login/logout, create account)
+- [ ] store todo data in database (for multiple users)
 - [ ] account management System (manage multiple account)
 - [ ] Developers can setup frontend & backend service with docker
 - [ ] add testing for this project (api test / e2e test)
